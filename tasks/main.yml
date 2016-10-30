@@ -9,6 +9,11 @@
     name: http://dl.iuscommunity.org/pub/ius/stable/CentOS/7/x86_64/ius-release-1.0-14.ius.centos7.noarch.rpm
     state: present
 
+- name: Update yum
+  yum:
+    name: *
+    state: latest
+
 - name: Install PHP 7 packages 
   yum:
     name: "{{ item }}"
@@ -20,7 +25,8 @@
   - php70u-opcache
   - php70u-xml
   - php70u-mcrypt
-  - php70u-gd php70u-devel
+  - php70u-gd
+  - php70u-devel
   - php70u-mysql
   - php70u-intl
   - php70u-mbstring
