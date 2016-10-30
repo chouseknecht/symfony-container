@@ -17,4 +17,4 @@ symfony:
   entrypoint: ["/usr/bin/entrypoint.sh"]
 
   dev_overrides:
-     command: ["cd", "/project/${PROJECT_NAME}", "&&", "php", "bin/console", "server:run"]   
+     command: ["php", "bin/console", "server:run"]   
