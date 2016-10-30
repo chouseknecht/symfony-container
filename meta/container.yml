@@ -9,7 +9,7 @@ symfony:
   - ..:/project
   environment:
   - PROJECT_NAME=example
-  entry_point: ["/usr/bin/entrypoint.sh"]
+  entrypoint: ["/usr/bin/entrypoint.sh"]
 
   dev_overrides:
      command: ["php", "bin/console", "server:run"]   
