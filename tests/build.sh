@@ -7,3 +7,7 @@ if [ "$?" == "0" ]; then
 else
     cat build.out
 fi 
+
+docker ps
+
+docker logs ansible_symfony_1
