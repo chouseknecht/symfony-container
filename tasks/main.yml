@@ -69,7 +69,7 @@
     path: /project
     state: directory
     owner: symfony
-    group: symfony
+    group: root 
     mode: 0777
    
 # - name: Remove composer-setup.php
