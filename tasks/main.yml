@@ -22,7 +22,7 @@
   - php70u-mcrypt
   - php70u-gd
   - php70u-devel
-  - php70u-mysql
+  - php70u-mysqlnd
   - php70u-intl
   - php70u-mbstring
   - php70u-bcmath
