@@ -17,4 +17,4 @@ symfony:
   entrypoint: ["/usr/bin/entrypoint.sh"]
 
   dev_overrides:
-     command: ["php", "bin/console", "server:start", "0.0.0.0:8000"]   
+     command: ["php", "bin/console", "server:run", "0.0.0.0:8000"]   

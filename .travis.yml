@@ -39,10 +39,6 @@ script:
 
   # Run tests
   - ansible-playbook test.yml
-  
-  # Debug
-  - docker ps 
-  - docker logs ansible_symfony_1 
 
 notifications:
   email: false
