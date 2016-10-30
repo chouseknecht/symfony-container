@@ -7,8 +7,8 @@ symfony:
   ports:
   - 8000:8000
 
-  volumes:
-  - ..:/project
+  #volumes:
+  #- ..:/project:rw
 
   environment:
   - PROJECT_NAME=example
