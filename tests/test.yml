@@ -14,7 +14,7 @@
       timeout: 120
 
   - name: Check the logs
-    command: docker ps ansible_symfony_1 
+    command: docker logs ansible_symfony_1 
     register: output
 
   - name: Show the log
