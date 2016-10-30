@@ -8,7 +8,7 @@ symfony:
   - 8000:8000
 
   volumes:
-  - ${PWD}:/symfony:rw
+  - $PWD:/symfony:rw
 
   environment:
   - PROJECT_NAME=example
