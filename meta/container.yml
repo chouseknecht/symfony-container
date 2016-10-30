@@ -1,0 +1,9 @@
+symfony:
+  image: "centos:7"
+  user: symfony
+  ports:
+    - 8000:8000
+  command: ["/bin/true"]
+
+  dev_overrides:
+    command: ["php", "bin/console", "server:run"]   
