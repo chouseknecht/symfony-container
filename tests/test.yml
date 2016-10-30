@@ -2,6 +2,23 @@
 - hosts: localhost
   gather_facts: no
   connection: local
+  vars:
+    host_ip: 127.0.0.1 
   tasks:
+  
+  - name: Wait for the service to start
+    wait_for:
+        delay: 15
+        host: "{{ host_ip }}"  
+        port: 8000
+        timeout: 120
 
-  # Add tasks and assertions for testing the service here.
+  - name: Get the web page
+    uri:
+      url: "http://{{ host_ip }}:8000" 
+      return_content: yes
+    register: output
+   
+  - name: Should return expected content
+    assert:
+      that: "'Read the documentation to learn' in output.content" 
