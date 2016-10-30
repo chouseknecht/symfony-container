@@ -1,15 +1,20 @@
 symfony:
   image: "centos:7"
   user: symfony
-  ports:
-  - 8000:8000
   command: ["/bin/true"]
   working_dir: /project
+
+  ports:
+  - 8000:8000
+
   volumes:
   - ..:/project
+
   environment:
   - PROJECT_NAME=example
+  - SYMFONY_VERSION=latest
+
   entrypoint: ["/usr/bin/entrypoint.sh"]
 
   dev_overrides:
-     command: ["php", "bin/console", "server:run"]   
+     command: ["cd", "/project/${PROJECT_NAME}", "&&", "php", "bin/console", "server:run"]   

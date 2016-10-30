@@ -1,7 +1,23 @@
 #!/bin/bash
 
-if [ ! -z "${PROJECT_NAME}" -a ! -d "/project/${PROJECT_NAME}" ]; then
-    symfony new ${PROJECT_NAME}  
+if [ -z "${PROJECT_NAME}" ]; then
+    echo "ERROR: Expecting PROJECT_NAME to be set."
+    exit 1
 fi
+
+if [ -z "${SYMFONY_VERSION}" ]; then
+    echo "ERROR: Expecting SYMFONY_VERSION to be set."
+    exit 1 
+fi
+
+if [ ! -d "/project/${PROJECT_NAME}" ]; then
+    # Create the project, if it does not already exist
+    symfony new ${PROJECT_NAME} ${SYMFONY_VERSION}  
+fi
+
+if [ -d "${PROJECT_NAME} ]; then
+    # Set the working directory to the project
+    cd ${PROJECT_NAME} 
+fi 
 
 exec "$@"
