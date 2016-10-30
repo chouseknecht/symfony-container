@@ -4,15 +4,15 @@ symfony:
   command: ["/bin/true"]
   working_dir: /symfony
 
-  ports:
-  - 8000:8000
-
   volumes:
   - $PWD:/symfony:rw
 
   environment:
   - PROJECT_NAME=example
   - SYMFONY_VERSION=latest
+
+  ports:
+  - 8000:8000
 
   entrypoint: ["/usr/bin/entrypoint.sh"]
 
