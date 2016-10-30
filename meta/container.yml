@@ -2,13 +2,13 @@ symfony:
   image: "centos:7"
   user: symfony
   command: ["/bin/true"]
-  working_dir: /project
+  working_dir: /symfony
 
   ports:
   - 8000:8000
 
-  #volumes:
-  #- ..:/project:rw
+  volumes:
+  - ..:/symphony:rw
 
   environment:
   - PROJECT_NAME=example

@@ -10,12 +10,13 @@ if [ -z "${SYMFONY_VERSION}" ]; then
     exit 1 
 fi
 
-if [ ! -d "/project/${PROJECT_NAME}" ]; then
+if [ ! -d "/symfony/${PROJECT_NAME}" ]; then
     # Create the project, if it does not already exist
+    cd /symfony
     symfony new ${PROJECT_NAME} ${SYMFONY_VERSION}  
 fi
 
 # Set the working directory to the project
-cd /project/${PROJECT_NAME} 
+cd /symfony/${PROJECT_NAME} 
 
 exec "$@"

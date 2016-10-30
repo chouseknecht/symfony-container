@@ -64,16 +64,8 @@
     group: root
     mode: 0775
 
-#- name: Set /project permissions
-#  file:
-#    path: /project
-#    state: directory
-#    owner: symfony
-#    group: root 
-#    mode: 0777
-   
-# - name: Remove composer-setup.php
-#  file:
-#    path: /composer-setup.php
-#    state: absent
+ - name: Remove composer-setup.php
+   file:
+     path: /composer-setup.php
+     state: absent
 
