@@ -15,9 +15,7 @@ if [ ! -d "/project/${PROJECT_NAME}" ]; then
     symfony new ${PROJECT_NAME} ${SYMFONY_VERSION}  
 fi
 
-if [ -d "${PROJECT_NAME}" ]; then
-    # Set the working directory to the project
-    cd ${PROJECT_NAME} 
-fi 
+# Set the working directory to the project
+cd /project/${PROJECT_NAME} 
 
 exec "$@"
