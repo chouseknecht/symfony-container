@@ -13,12 +13,12 @@
         port: 8000
         timeout: 120
 
-  - name: Get the web page
-    uri:
-      url: "http://{{ host_ip }}:8000" 
-      return_content: yes
-    register: output
-   
-  - name: Should return expected content
-    assert:
-      that: "'Read the documentation to learn' in output.content" 
+#  - name: Get the web page
+#    uri:
+#      url: "http://{{ host_ip }}:8000" 
+#      return_content: yes
+#    register: output
+#   
+#  - name: Should return expected content
+#    assert:
+#      that: "'Read the documentation to learn' in output.content" 
