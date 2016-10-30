@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ ! -z "${PROJECT_NAME}" && ! -d "/project/${PROJECT_NAME}" ]; then
+if [ ! -z "${PROJECT_NAME}" -a ! -d "/project/${PROJECT_NAME}" ]; then
     symfony new ${PROJECT_NAME}  
 fi
 
