@@ -49,9 +49,6 @@
 - name: Install composer
   command: php /composer-setup.php php --install-dir=/usr/bin --filename=composer
 
-- name: Update composer
-  command: composer update
-
 - name: Create symfony user
   user:
     name: symfony
