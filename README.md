@@ -1,6 +1,6 @@
 # symfony-container 
 
-Adds a symfony service to your [Ansible Container](https://github.com/ansible/ansible-container) project. Includes PHP, symfony and composer.
+Adds a symfony service to your [Ansible Container](https://github.com/ansible/ansible-container) project. Includes [PHP](https://php.net), [symfony](https://symfony.com), and [composer](https://getcomposer.org) - all the things you need to build a modern PHP app.
 
 Run the following commands to install the service:
 
@@ -34,7 +34,7 @@ $ ansible-container install <USERNAME.ROLE_NAME>
 
 ## License
 
-[Apache 2](https://github.com/chouseknecht/symfony-container/LICENSE)
+[Apache 2](https://github.com/chouseknecht/symfony-container/blob/master/LICENSE)
 
 ## Author Information
 
