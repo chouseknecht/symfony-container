@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if [ ! -z "${PROJECT_NAME}" && ! -d "/project/${PROJECT_NAME}" ]; then
+    symfony new ${PROJECT_NAME}  
+fi
+
+exec "$@"

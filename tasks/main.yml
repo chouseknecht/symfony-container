@@ -55,6 +55,14 @@
     uid: 1000
     group: root
     createhome: no
+
+- name: Copy entrypoint script
+  template:
+    src: entrypoint.sh.j2
+    dest: /usr/bin/entrypoint.sh
+    owner: root
+    group: root
+    mode: 0775
    
 # - name: Remove composer-setup.php
 #  file:

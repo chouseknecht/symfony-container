@@ -24,9 +24,12 @@
     register: output
     ignore_errors: yes
 
-  - assert:
-      that: not output.failed
+  - name: Check if build passed
+    shell: grep unreachable=0 build.out | grep failed=0
+    register: checkifpassed
+    ignore_errors: yes
+    changed_when: false
 
-  - name: Run the project
-    command: ansible-container run
+  - assert:
+      that: checkifpassed.rc == 0 
 
