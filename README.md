@@ -1,6 +1,6 @@
 # symfony-container 
 
-Adds a symfony service to your [Ansible Container](https://github.com/ansible/ansible-container) project. Includes [PHP](https://php.net), [symfony](https://symfony.com), and [composer](https://getcomposer.org) - all the things you need to build a modern PHP app.
+Adds a symfony service to your [Ansible Container](https://github.com/ansible/ansible-container) project. Includes [PHP 7](https://php.net), [symfony](https://symfony.com), and [composer](https://getcomposer.org) - all the things you need to build a modern PHP app.
 
 Run the following commands to install the service:
 
@@ -26,6 +26,10 @@ If you're running Docker Machine on Linux or OSX, you can run the following comm
 $ http://$(docker-machine ip default):8000
 ```
 
+## Configuring PHP
+
+The default */etc/php.ini* file that comes with the PHP pacakge is used. If you wish to override it, the easiest thing to do is mount a host or named volume containing your custom settings to that path. 
+
 ## Requirements
 
 - [Ansible Container](https://github.com/ansible/ansible-container)
@@ -43,7 +47,8 @@ $ http://$(docker-machine ip default):8000
 
 ## Role Variables
 
-None.
+symfony_php_timezone: America/New_York
+> Set the default time zone to a value found in [PHP Supported Timezones](http://php.net/manual/en/timezones.php)
 
 
 ## License

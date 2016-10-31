@@ -69,3 +69,10 @@
     path: /composer-setup.php
     state: absent
 
+- name: Set the timezone
+  lineinfile:
+    dest: /etc/php.ini
+    state: present
+    regexp: "^;date.timezone ="
+    line: "date.timezone = {{ symfony_php_timezone }}"
+
