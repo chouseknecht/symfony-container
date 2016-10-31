@@ -43,7 +43,7 @@ $ http://$(docker-machine ip default):8000
 
 ## Role Variables
 
-??
+None.
 
 
 ## License
