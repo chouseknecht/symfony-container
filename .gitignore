@@ -1,4 +1,4 @@
 tests/ansible
-tests/example
+tests/symfony
 *.retry
 *.out

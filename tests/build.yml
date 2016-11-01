@@ -12,6 +12,7 @@
       - ./ansible
       - build.out
       - playbook.out
+      - symfony
 
   - name: Init the ansible directory 
     command: ansible-container init
