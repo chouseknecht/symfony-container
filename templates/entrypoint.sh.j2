@@ -1,9 +1,6 @@
 #!/bin/bash
 
-if [ -z "${PROJECT_NAME}" ]; then
-    echo "ERROR: Expecting PROJECT_NAME to be set."
-    exit 1
-fi
+export PROJECT_NAME=symfony
 
 if [ -z "${SYMFONY_VERSION}" ]; then
     echo "ERROR: Expecting SYMFONY_VERSION to be set."

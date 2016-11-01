@@ -8,7 +8,6 @@ symfony:
   - $PWD:/symfony:rw
 
   environment:
-  - PROJECT_NAME=example
   - SYMFONY_VERSION=latest
 
   ports:

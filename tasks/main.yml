@@ -54,7 +54,8 @@
     name: symfony
     uid: 1000
     group: root
-    createhome: no
+    createhome: yes
+    shell: /bin/bash
 
 - name: Copy entrypoint script
   template:

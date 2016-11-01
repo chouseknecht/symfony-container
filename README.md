@@ -14,7 +14,7 @@ $ ansible-container install <USERNAME.ROLE_NAME>
 
 ## Getting started 
 
-Set the PROJECT_NAME environment variable to the name of the project you want to create, and when the container starts the project will be initiazed. Inside the container the project gets created in the /symphony directory, which is a volume mounted to the root of Ansible Container project. In other words, your symfony project is accessible both inside and outside of the container.
+The root of your Ansible Container project directory is mounted to the container as */symfony*, and the first time you start the container a new project called *symfony* will be initiazed in */symfony*. So inside the container the project is accessible as */symfony/symfony*, and in the root of your project you will see it as *symfony*.
 
 If you want the project initialized using a particular version of symfony, simply set the SYMFONY_VERSION environment variable to the desired version. Otherwise, the default version installed is 'latest'. 
 
