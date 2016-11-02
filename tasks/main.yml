@@ -70,10 +70,11 @@
     path: /composer-setup.php
     state: absent
 
-- name: Set the timezone
-  lineinfile:
+- name: Copy php.ini 
+  template:
+    src: php.ini.j2
     dest: /etc/php.ini
-    state: present
-    regexp: "^;date.timezone ="
-    line: "date.timezone = {{ symfony_php_timezone }}"
+    owner: root
+    group: root
+    mode: 0664
 

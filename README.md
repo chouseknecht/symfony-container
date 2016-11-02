@@ -28,7 +28,15 @@ $ http://$(docker-machine ip default):8000
 
 ## Configuring PHP
 
-The default */etc/php.ini* file that comes with the PHP pacakge is used. If you wish to override it, the easiest thing to do is mount a host or named volume containing your custom settings to that path. 
+The *templates* directory contains *php.ini.j2*, which gets expanded and copied to */etc/php.ini* when you run `ansible-container build`. See Role Variables below for setting you can adjust. The best thing to do is to use the template and make adjustments via role variables. If you need to make more adjustments than supported through the already defined variables, you can add additional variables or modify the template file directly. That way the final image will contain the correct configuration when you deploy to production. If setting database usernames and passwords in your *php.ini*, make sure to use environment variables rather than hard-coding the actual values. 
+
+Since the configuration file ends up being */etc/php.ini*, another option is to mount your own custom configuration file to this path at run-time using *dev_overrides*. For example:
+
+```
+dev_overrides:
+  volumes:
+  - /host_path/to/php.ini:/etc/php.ini
+```
 
 ## Requirements
 
@@ -47,9 +55,32 @@ The default */etc/php.ini* file that comes with the PHP pacakge is used. If you 
 
 ## Role Variables
 
-symfony_php_timezone: America/New_York
-> Set the default time zone to a value found in [PHP Supported Timezones](http://php.net/manual/en/timezones.php)
+The following variables are used to configure PHP in */etc/php.ini*:
 
+```
+php_memory_limit: "256M"
+php_max_execution_time: "60"
+php_max_input_time: "60"
+php_max_input_vars: "1000"
+php_realpath_cache_size: "32K"
+php_upload_max_filesize: "64M"
+php_post_max_size: "32M"
+php_date_timezone: "America/New_York"
+php_allow_url_fopen: "On"
+php_sendmail_path: ""
+php_output_buffering: "4096"
+php_short_open_tag: false
+php_error_reporting: "E_ALL & ~E_DEPRECATED & ~E_STRICT"
+php_display_errors: "Off"
+php_display_startup_errors: "On"
+php_expose_php: "On"
+php_session_cookie_lifetime: 0
+php_session_gc_probability: 1
+php_session_gc_divisor: 1000
+php_session_gc_maxlifetime: 1440
+php_session_save_handler: files
+php_session_save_path: ''
+```
 
 ## License
 
