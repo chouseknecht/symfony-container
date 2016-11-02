@@ -30,15 +30,13 @@ $ http://$(docker-machine ip default):8000
 
 ## Configuring PHP
 
-The *templates* directory contains *php.ini.j2*, which gets expanded and copied to */etc/php.ini* when you run `ansible-container build`. See Role Variables below for setting you can adjust. The best thing to do is to use the template and make adjustments via role variables. If you need to make more adjustments than supported through the already defined variables, you can add additional variables or modify the template file directly. That way the final image will contain the correct configuration when you deploy to production. If setting database usernames and passwords in your *php.ini*, make sure to use environment variables rather than hard-coding the actual values. 
+The *templates* directory contains *php.ini.j2*, which gets expanded and copied to */etc/php.ini* when you run `ansible-container build`. See Role Variables below for specific settings you can adjust using variables.
 
-Since the configuration file ends up being */etc/php.ini*, another option is to mount your own custom configuration file to this path at run-time using *dev_overrides*. For example:
+The best thing to do is to use the template, and make adjustments via role variables. If you need to make more adjustments than supported through the already defined variables, you can add additional variables or modify the template file directly.
 
-```
-dev_overrides:
-  volumes:
-  - /host_path/to/php.ini:/etc/php.ini
-```
+If you find that you must set database usernames and passwords globally in your *php.ini*, be sure to use environment variables rather than templating the actual values into the file, so that you don't create and then accidentally distribute an image containing usernames and passwords.
+
+Since the configuration file ends up being */etc/php.ini*, another option is to mount your own custom configuration file to this path at run-time.
 
 ## Requirements
 
