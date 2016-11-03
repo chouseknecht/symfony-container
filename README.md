@@ -86,6 +86,8 @@ php_session_gc_divisor: 1000
 php_session_gc_maxlifetime: 1440
 php_session_save_handler: files
 php_session_save_path: ''
+php_variable_order: "GPCS"
+php_request_order: "GP"
 ```
 
 ## License
