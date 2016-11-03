@@ -8,6 +8,9 @@ symfony:
   - $PWD:/symfony:rw
 
   environment:
+  # Set DEMO_MODE=1 to initialize with https://github.com/symfony/symfony-demo
+  # the first time the container starts.
+  - DEMO_MODE=0
   - SYMFONY_VERSION=latest
 
   ports:

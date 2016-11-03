@@ -8,9 +8,15 @@ if [ -z "${SYMFONY_VERSION}" ]; then
 fi
 
 if [ ! -d "/symfony/${PROJECT_NAME}" ]; then
-    # Create the project, if it does not already exist
-    cd /symfony
-    symfony new ${PROJECT_NAME} ${SYMFONY_VERSION}  
+    if [ ${DEMO_MODE} == 1 ]; then
+        # Install the demo project from https://github.com/symfony/symfony-demo
+        cd /symfony
+        symfony demo ${PROJECT_NAME}
+    else
+        # Create a new project, if one does not already exist
+        cd /symfony
+        symfony new ${PROJECT_NAME} ${SYMFONY_VERSION}
+    fi
 fi
 
 # Set the working directory to the project

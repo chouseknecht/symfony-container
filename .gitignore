@@ -2,3 +2,4 @@ tests/ansible
 tests/symfony
 *.retry
 *.out
+.idea
