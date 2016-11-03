@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -x
+
 export PROJECT_NAME=symfony
 
 if [ -z "${SYMFONY_VERSION}" ]; then
@@ -8,7 +10,7 @@ if [ -z "${SYMFONY_VERSION}" ]; then
 fi
 
 if [ ! -d "/symfony/${PROJECT_NAME}" ]; then
-    if [ ${DEMO_MODE} == 1 ]; then
+    if [ "${DEMO_MODE}" = "1" ]; then
         # Install the demo project from https://github.com/symfony/symfony-demo
         cd /symfony
         symfony demo ${PROJECT_NAME}
