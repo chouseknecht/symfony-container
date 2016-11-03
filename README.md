@@ -28,6 +28,12 @@ If you're running Docker Machine on Linux or OSX, you can run the following comm
 $ http://$(docker-machine ip default):8000
 ```
 
+### Start with the demo app 
+
+The first time you start the symfony service an empty project is created, and you're ready to start development. If you're new to symfony and would rather start with the demo app, you can do that too. Just change the *DEMO_MODE* environment variable to *DEMO_MODE=1* in *container.yml*, and the service will be initialized with the [symfony demo](https://github.com/symfony/symfony-demo).
+
+As mentioned above, the built-in web server will automatically start, and you can access it on port 8000.
+
 ## Configuring PHP
 
 The *templates* directory contains *php.ini.j2*, which gets expanded and copied to */etc/php.ini* when you run `ansible-container build`. See Role Variables below for specific settings you can adjust using variables.
