@@ -40,7 +40,7 @@
     group: root
     mode: 0755
 
-- name: Get the PHP composer intaller
+- name: Get the PHP composer installer
   get_url:
     url: https://getcomposer.org/installer
     dest: /composer-setup.php
