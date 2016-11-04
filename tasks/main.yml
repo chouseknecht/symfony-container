@@ -46,7 +46,7 @@
     dest: /composer-setup.php
 
 - name: Install composer
-  command: php /composer-setup.php php --install-dir=/usr/bin --filename=composer
+  command: php /composer-setup.php --install-dir=/usr/bin --filename=composer
 
 - name: Create symfony user
   user:
