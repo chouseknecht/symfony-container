@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/chouseknecht/symfony-container.svg?branch=master)](https://travis-ci.org/chouseknecht/symfony-container)
 
-Adds a symfony service to your [Ansible Container](https://github.com/ansible/ansible-container) project. Includes [PHP 7](https://php.net), [symfony](https://symfony.com), and [composer](https://getcomposer.org) - all the things you need to build a modern PHP app.
+Adds a symfony service to your [Ansible Container](https://github.com/ansible/ansible-container) project. Includes [PHP 7](https://php.net), the latest [symfony](https://symfony.com), and the latest [composer](https://getcomposer.org) - all the things you need to build a modern PHP app.
 
 Run the following commands to install the service:
 
