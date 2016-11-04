@@ -3,7 +3,7 @@
   gather_facts: no
   connection: local
   vars:
-    host_ip: 0.0.0.0 
+    host_ip: 192.168.99.100
   tasks:
   
   - name: Wait for the service to start
@@ -30,3 +30,11 @@
   - name: Should return expected content
     assert:
       that: "'Read the documentation to learn' in output.content" 
+
+  - name: Get composer version
+    command: docker exec ansible_symfony_1 composer --version
+    register: cmp
+  
+  - name: Should have expected output
+    assert:
+      that: "'Composer' in cmp.stdout" 
