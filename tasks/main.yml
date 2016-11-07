@@ -28,6 +28,7 @@
   - php70u-bcmath
   - php70u-json
   - php70u-iconv
+  - php70u-soap 
 
 - name: Clearn yum cache
   command: yum clean all
