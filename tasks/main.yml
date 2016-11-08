@@ -40,6 +40,7 @@
     owner: root
     group: root
     mode: 0755
+    validate_certs: no
 
 - name: Get the PHP composer installer
   get_url:
